@@ -931,6 +931,9 @@ message ZInfoApp {
   repeated ZInfoNetwork network = 16;       // up/down; allocated IP
   repeated string volumeRefs = 17;          // volume UUIDs
   repeated ZInfoSnapshot snapshots = 18;    // optional field, used to send list of snapshots on device
+
+  // The App in cluster mode is currently running on this edge-node
+  bool ClusterAppRunning = 20;
 }
 
 // ipSec state information

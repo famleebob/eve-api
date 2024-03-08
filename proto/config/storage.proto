@@ -208,6 +208,12 @@ message Volume {
   string displayName = 7;  // Optional friendly name echo'ed in info message
   bool clear_text = 8;     // Flag to indicate the volume encryption needed or not
   Target target = 9;       // How the volume will be presented to the instance. At the moment only the AppCustom is used
+
+  // To inform the edge-node if the device receiving this Volume is
+  // responsible for volume creation, convert PVC, or not
+  string DesignatedNodeID = 10;
+  // replicated to devices with UUID array, number range from 0 to 2
+  repeated string ReplicaNodeID = 11;
 }
 
 // DiskConfigType is the desired configuration of disks
